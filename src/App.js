@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { NavBar, ItemPage } from "./Components";
+
+const products = [
+  { id: 1, name: "Phone", price: 1000 },
+  { id: 2, name: "Laptop", price: 2000 },
+  { id: 3, name: "Tablet", price: 3000 },
+  { id: 4, name: "Desktop", price: 2000 }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="App">
+      <NavBar />
+      <main>
+        <ItemPage items={products} />
+      </main>
+    </section>
   );
 }
 
