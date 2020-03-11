@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { NavBar, ItemPage } from "./Components";
 
@@ -9,15 +9,27 @@ const products = [
   { id: 4, name: "Desktop", price: 2000 }
 ];
 
-function App() {
-  return (
-    <section className="App">
-      <NavBar />
-      <main>
-        <ItemPage items={products} />
-      </main>
-    </section>
-  );
+class App extends Component {
+  state = {
+    cart: [],
+    activePage: "store"
+  };
+
+  handleAdd = item => {
+    console.log(item);
+    this.setState(prev => ({ cart: [...prev.cart, item] }));
+  };
+  onAddToCart = () => console.log("click");
+  render() {
+    return (
+      <section className="App">
+        <NavBar cartCount={this.state.cart.length} />
+        <main>
+          <ItemPage items={products} onAddToCart={this.handleAdd} />
+        </main>
+      </section>
+    );
+  }
 }
 
 export default App;

@@ -1,20 +1,22 @@
 import React from "react";
 
-const ItemList = ({ key, name, price }) => {
+const ItemList = ({ item, onAddToCart }) => {
   return (
-    <li key={key}>
+    <li key={`${item.id}-${item.name}`}>
       <div
         style={{
-          width: "300px",
+          // width: "300px",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center"
         }}
       >
-        <span>{name}</span>
-        <span>${price}</span>
-        <button type="button">Add to cart</button>
+        <span>{item.name}</span>
+        <span style={{ marginLeft: "auto" }}>${item.price}</span>
+        <button onClick={() => onAddToCart(item)} type="button">
+          Add to cart
+        </button>
       </div>
     </li>
   );
