@@ -1,5 +1,6 @@
 import NavBar from "./NavBar";
 import ItemPage from "./ItemPage";
 import ItemList from "./ItemList";
+import CartPage from "./CartPage";
 
-export { NavBar, ItemPage, ItemList };
+export { NavBar, ItemPage, ItemList, CartPage };
