@@ -5,8 +5,8 @@ export default function CartPage({ items }) {
   return (
     <div>
       <ul>
-        {items.map((x, i) => {
-          return <CartItem key={i} item={x} />;
+        {items.map((item, i) => {
+          return <CartItem key={i} item={item} />;
         })}
       </ul>
     </div>

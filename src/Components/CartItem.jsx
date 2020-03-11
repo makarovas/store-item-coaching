@@ -1,12 +1,25 @@
 import React from "react";
-import { ItemList } from ".";
-export default function CartItem({ items, onAddToCart }) {
+
+const ItemList = ({ item, onAddToCart }) => {
   return (
-    <ul>
-      <h1>List of items</h1>
-      {items.map((item, i) => {
-        return <ItemList item={item} key={i} onAddToCart={onAddToCart} />;
-      })}
-    </ul>
+    <li key={`${item.id}-${item.name}`}>
+      <div
+        style={{
+          // width: "300px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}
+      >
+        <span>{item.name}</span>
+        <span style={{ marginLeft: "auto" }}>${item.price}</span>
+        <button onClick={() => onAddToCart(item)} type="button">
+          Add to cart
+        </button>
+      </div>
+    </li>
   );
-}
+};
+
+export default ItemList;
