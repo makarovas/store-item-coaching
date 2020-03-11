@@ -36,7 +36,7 @@ class App extends Component {
           {activePage === "store" ? (
             <ItemPage items={products} onAddToCart={this.handleAdd} />
           ) : (
-            <CartPage />
+            <CartPage items={cart} />
           )}
         </main>
       </section>
