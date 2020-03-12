@@ -14,10 +14,10 @@ export default class CheckoutPage extends Component {
   };
 
   handleChange = e => {
-    // e.preventDefault();
-    console.log(e.target.name);
-    console.log(e.target.value);
-    this.setState({ [e.target.name]: e.target.value });
+    const name = e.target.value;
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    this.setState({ [name]: value });
   };
   render() {
     const {
@@ -31,9 +31,10 @@ export default class CheckoutPage extends Component {
       password
     } = this.state;
     const { items } = this.props;
+    const done = firstName && lastName && email && street && city && state;
     return (
-      <div style={{ width: "60%" }}>
-        <p>You are buying {items.count}</p>
+      <div style={{ width: "60%", marginTop: "20px" }}>
+        <p>{`You are buying ${items.length} goods`}</p>
         <form>
           <div className="form-row">
             <div className="form-group col-md-6">
@@ -129,7 +130,39 @@ export default class CheckoutPage extends Component {
           <button type="submit" className="btn btn-primary">
             Sign in
           </button>
+          <div className="form-check">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="isResidential"
+              name="isResidential"
+              value={isResidential}
+              onChange={this.handleChange}
+            />
+            <label className="form-check-label" htmlFor="isResidential">
+              Is this a residential address?
+            </label>
+          </div>
         </form>
+        <section>
+          <h3>Confirm Shipping Info</h3>
+          {done ? (
+            <>
+              <div>
+                {firstName} {lastName}
+              </div>
+              <div>{street}</div>
+              <div>
+                {city}, {state}
+              </div>
+              <div>{email}</div>
+              <br />
+              <div>{isResidential ? "residential" : "commercial"}</div>
+            </>
+          ) : (
+            "Fill out the form details"
+          )}
+        </section>
       </div>
     );
   }

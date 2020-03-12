@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     cart: [],
     // activePage: "store",
-    activePage: "store"
+    activePage: "basket"
   };
 
   handleAdd = item => {

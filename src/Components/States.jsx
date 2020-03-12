@@ -12,7 +12,7 @@ const States = () => {
         return (
           <option
             name={states[keyName]}
-            value={keyName}
+            // value={keyName}
             key={`${i}- ${keyName}`}
           >
             {states[keyName]}
