@@ -3,10 +3,10 @@ import "./App.css";
 import { NavBar, ItemPage, CartPage } from "./Components";
 
 const products = [
-  { id: 1, name: "Phone", price: 1000 },
-  { id: 2, name: "Laptop", price: 2000 },
-  { id: 3, name: "Tablet", price: 3000 },
-  { id: 4, name: "Desktop", price: 2000 }
+  { id: 1, name: "Phone", price: 199 },
+  { id: 2, name: "Laptop", price: 299 },
+  { id: 3, name: "Tablet", price: 359 },
+  { id: 4, name: "Desktop", price: 1199 }
 ];
 
 class App extends Component {

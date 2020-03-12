@@ -1,11 +1,10 @@
 import React from "react";
 
-const ItemList = ({ item, onAddToCart }) => {
+const ItemList = ({ item, onAddToCart, children }) => {
   return (
     <li key={`${item.id}-${item.name}`}>
       <div
         style={{
-          // width: "300px",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -14,9 +13,10 @@ const ItemList = ({ item, onAddToCart }) => {
       >
         <span>{item.name}</span>
         <span style={{ marginLeft: "auto" }}>${item.price}</span>
-        <button onClick={() => onAddToCart(item)} type="button">
+        {/* <button onClick={() => onAddToCart(item)} type="button">
           Add to cart
-        </button>
+        </button> */}
+        {children}
       </div>
     </li>
   );

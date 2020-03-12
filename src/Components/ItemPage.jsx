@@ -13,7 +13,11 @@ export default function ItemPage({ items, onAddToCart }) {
             name={item.name}
             price={item.price}
             onAddToCart={onAddToCart}
-          />
+          >
+            <button onClick={() => onAddToCart(item)} type="button">
+              Add to cart
+            </button>
+          </ItemList>
         );
       })}
     </ul>
