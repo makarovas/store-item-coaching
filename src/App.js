@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { NavBar, ItemPage, CartPage } from "./Components";
+import { NavBar, ItemPage, CartPage, CheckoutPage } from "./Components";
 
 const products = [
   { id: 1, name: "Phone", price: 199 },
@@ -12,6 +12,7 @@ const products = [
 class App extends Component {
   state = {
     cart: [],
+    // activePage: "store",
     activePage: "store"
   };
 
@@ -35,8 +36,10 @@ class App extends Component {
         <main>
           {activePage === "store" ? (
             <ItemPage items={products} onAddToCart={this.handleAdd} />
+          ) : activePage === "basket" ? (
+            <CartPage items={cart} onPageChange={this.handlePageChange} />
           ) : (
-            <CartPage items={cart} />
+            <CheckoutPage items={cart} />
           )}
         </main>
       </section>

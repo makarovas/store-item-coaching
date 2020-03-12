@@ -4,4 +4,6 @@ import ItemList from "./ItemList";
 import CartPage from "./CartPage";
 import CartItem from "./CartItem";
 
-export { NavBar, ItemPage, ItemList, CartPage, CartItem };
+import CheckoutPage from "./CheckoutPage";
+
+export { NavBar, ItemPage, ItemList, CartPage, CartItem, CheckoutPage };

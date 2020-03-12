@@ -15,7 +15,7 @@ const summarizer = (result, item) => {
   return result;
 };
 
-export default function CartPage({ items }) {
+export default function CartPage({ items, onPageChange }) {
   const cart = items.reduce(summarizer, []);
   return (
     <div>
@@ -42,6 +42,16 @@ export default function CartPage({ items }) {
         {cart.reduce((total, item) => {
           return total + item.price * item.count;
         }, 0)}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          marginTop: "10px"
+        }}
+      >
+        <button onClick={() => onPageChange("checkout")}>Checkout NOW</button>
       </div>
     </div>
   );
