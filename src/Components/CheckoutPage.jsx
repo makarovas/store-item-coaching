@@ -148,18 +148,20 @@ export default class CheckoutPage extends Component {
         <section>
           <h3>Confirm Shipping Info</h3>
           {done ? (
-            <>
-              <div>
-                {firstName} {lastName}
+            <div className="card">
+              <div className="card-body">
+                <div>
+                  {firstName} {lastName}
+                </div>
+                <div>{street}</div>
+                <div>
+                  {city}, {state}
+                </div>
+                <div>{email}</div>
+                <br />
+                <div>{isResidential ? "residential" : "commercial"}</div>
               </div>
-              <div>{street}</div>
-              <div>
-                {city}, {state}
-              </div>
-              <div>{email}</div>
-              <br />
-              <div>{isResidential ? "residential" : "commercial"}</div>
-            </>
+            </div>
           ) : (
             "Fill out the form details"
           )}
