@@ -14,9 +14,10 @@ export default class CheckoutPage extends Component {
   };
 
   handleChange = e => {
-    const name = e.target.value;
+    const name = e.target.name;
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    console.log(e.target);
     this.setState({ [name]: value });
   };
   render() {

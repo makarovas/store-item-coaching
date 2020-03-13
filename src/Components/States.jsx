@@ -10,11 +10,7 @@ const States = () => {
       </option>
       {Object.keys(states).map((keyName, i) => {
         return (
-          <option
-            name={states[keyName]}
-            // value={keyName}
-            key={`${i}- ${keyName}`}
-          >
+          <option name={states[keyName]} key={`${i}- ${keyName}`}>
             {states[keyName]}
           </option>
         );
